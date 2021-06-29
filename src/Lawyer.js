@@ -31,14 +31,15 @@ color: inherit;
 
 .effect-wrapper
 {
-    align-items: center;
- background-color: #000;
+ align-items: center;
+ background-color: #fff;
  display: flex;
+ flex-shrink:0;
  flex-direction: column;
- min-height: 100vh;
  perspective: 261.111vw;
  position: relative;
  width: 100%;
+ 
  overflow:hidden;
 }
 .effect
@@ -47,7 +48,6 @@ color: inherit;
 transform-origin: 100% 0;
 transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 width: 100%;
-min-height: 100vh;
 background: linear-gradient(179.7deg, #0C201A 0.4%, #05130F 34.65%, rgba(1, 31, 22, 0.98) 70.18%, rgba(0, 40, 28, 0.96) 96.64%);;
 }
 .active  {
@@ -71,15 +71,17 @@ opacity: 1;
 .container-wrapper
 {
 width: 100%;
-height: 100vh;
+height: 100%;
 display: flex;
+flex-shrink: 0;
 justify-content: center;
+overflow:hidden;
 
 }
 .container
 {
 width: 90%;
-height: 88%;
+
 overflow:scroll;
 }
 
@@ -87,12 +89,12 @@ overflow:scroll;
 {
 
 width: 100%;
-height: 25vh;
 box-shadow: 0 0.4px 1px rgba(0, 0, 0, 0.026), 0 1px 2.3px rgba(0, 0, 0, 0.045),
 0 1.9px 4.4px rgba(0, 0, 0, 0.065), 0 3.4px 7.8px rgba(0, 0, 0, 0.094),
 0 6.3px 14.6px rgba(0, 0, 0, 0.145), 0 15px 35px rgba(0, 0, 0, 0.25);
 transform-origin: 50% 100%;
 position: relative;
+overflow:hidden;
 
 }
 .image
@@ -144,6 +146,7 @@ color: #E9C49A;
      
      width: 100%;
      display: flex;
+     flex-shrink: 0;
      align-items: center;
  }
 
@@ -163,10 +166,14 @@ color: #E9C49A;
      position: fixed;
      top: auto;
      display: flex;
+     flex-shrink: 0;
      justify-content: center;
      align-items: center;
-     bottom: 1.5%;
+     top:auto;
+     bottom: 0;
      z-index: 1;
+     overflow:hidden;
+    
  }
 
  .share-icon-holder
@@ -195,6 +202,7 @@ background: #06251B;
 background-blend-mode: screen;
 bottom: 0;
 display: flex;
+flex-shrink: 0;
 flex-wrap: wrap;
 height: 60vw;
 position: absolute;
@@ -226,7 +234,9 @@ transform: translateY(0vw);
  }
  .input
 {
-
+ outline: none; 
+ box-shadow: none; 
+ border: none ;
  font-family: Roboto;
  font-style: normal;
 
@@ -292,6 +302,7 @@ transform: translateY(0vw);
  {
 
   display: flex;
+  flex-shrink: 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -308,6 +319,7 @@ transform: translateY(0vw);
  {
 
      display: flex;
+    
      flex-direction: column;
      align-items: center;
      flex-shrink: 0;
@@ -378,12 +390,24 @@ transform: translateY(0vw);
   
      transition:  transform 1s ease-out;
  }
- .qr-code-container img
- { 
-     
-    
-    
+ .image{
+    animation: zoomLoop 10s infinite;
  }
+ @keyframes zoomLoop {
+    0% {
+
+      transform: scale(1);
+      
+    }
+    50%{
+      transform: scale(1.1);
+    }
+    
+    100% {
+    transform: scale(1);
+
+    }
+  }
 `;
 
 const Lawyer = () => {
@@ -392,9 +416,21 @@ const Lawyer = () => {
   const getSize = (width, heightPercentage) => {
     return `min(${width}vw, ${(size.height * heightPercentage) / 100}px)`;
   };
+  const getHeight = (heightPercentage) => {
+    return `${(size.height * heightPercentage) / 100}px`;
+  };
 
   useEffect(() => {
     //eslint-disable-next
+    const clamp = (x, min, max) => Math.max(min, Math.min(x, max));
+    const list = document.querySelector(".container");
+    const card = document.querySelector(".image-container");
+    list.addEventListener("scroll", (e) => {
+      const scale = clamp((200 - list.scrollTop + 0.3 * 72) / 100, 0, 1);
+      const opacity = clamp((160 - list.scrollTop + 0.3 * 72) / 60, 0, 1);
+      card.style.transform = `scale(${scale})`;
+      card.style.opacity = `${opacity}`;
+    });
   }, []);
 
   function openShare() {
@@ -425,18 +461,34 @@ const Lawyer = () => {
   }
 
   return (
-    <div>
+    <div style={{ overflow: "hidden" }}>
       <GlobalStyle />
 
-      <div className="effect-wrapper">
-        <div className="effect">
+      <div
+        className="effect-wrapper"
+        style={{
+          height: getHeight(100),
+        }}
+      >
+        <div
+          className="effect"
+          style={{
+            height: getHeight(100),
+          }}
+        >
           <div className="container-wrapper">
-            <div className="container">
+            <div
+              className="container"
+              style={{
+                height: getHeight(88),
+              }}
+            >
               <div
                 className="image-container"
                 style={{
                   marginTop: getSize(5, 3),
                   borderRadius: getSize(5, 3),
+                  height: getHeight(25),
                 }}
               >
                 <img
@@ -881,7 +933,7 @@ const Lawyer = () => {
             <div
               className="fixed-buttons"
               style={{
-                height: getSize(26, 13),
+                height: getHeight(12),
               }}
             >
               <a

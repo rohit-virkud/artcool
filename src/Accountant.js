@@ -711,6 +711,22 @@ animation: openBottom 5s;
     display: none;
 }
 
+@keyframes zoomLoop {
+  0% {
+
+    transform: scale(1);
+    
+  }
+  50%{
+    transform: scale(1.1);
+  }
+  
+  100% {
+  transform: scale(1);
+
+  }
+}
+
 `;
 const Accountant = () => {
   const size = useWindowSize();
