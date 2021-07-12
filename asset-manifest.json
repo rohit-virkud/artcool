@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/artcool/static/css/main.a617e044.chunk.css",
-    "main.js": "/artcool/static/js/main.f084694d.chunk.js",
-    "main.js.map": "/artcool/static/js/main.f084694d.chunk.js.map",
-    "runtime-main.js": "/artcool/static/js/runtime-main.94db9e12.js",
-    "runtime-main.js.map": "/artcool/static/js/runtime-main.94db9e12.js.map",
-    "static/js/2.92ff21c1.chunk.js": "/artcool/static/js/2.92ff21c1.chunk.js",
-    "static/js/2.92ff21c1.chunk.js.map": "/artcool/static/js/2.92ff21c1.chunk.js.map",
-    "static/js/3.080418ca.chunk.js": "/artcool/static/js/3.080418ca.chunk.js",
-    "static/js/3.080418ca.chunk.js.map": "/artcool/static/js/3.080418ca.chunk.js.map",
+    "main.js": "/artcool/static/js/main.ff2d03ef.chunk.js",
+    "main.js.map": "/artcool/static/js/main.ff2d03ef.chunk.js.map",
+    "runtime-main.js": "/artcool/static/js/runtime-main.f2b7fc6d.js",
+    "runtime-main.js.map": "/artcool/static/js/runtime-main.f2b7fc6d.js.map",
+    "static/js/2.0bc2c21a.chunk.js": "/artcool/static/js/2.0bc2c21a.chunk.js",
+    "static/js/2.0bc2c21a.chunk.js.map": "/artcool/static/js/2.0bc2c21a.chunk.js.map",
+    "static/js/3.e54dc8af.chunk.js": "/artcool/static/js/3.e54dc8af.chunk.js",
+    "static/js/3.e54dc8af.chunk.js.map": "/artcool/static/js/3.e54dc8af.chunk.js.map",
     "index.html": "/artcool/index.html",
     "static/css/main.a617e044.chunk.css.map": "/artcool/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.92ff21c1.chunk.js.LICENSE.txt": "/artcool/static/js/2.92ff21c1.chunk.js.LICENSE.txt"
+    "static/js/2.0bc2c21a.chunk.js.LICENSE.txt": "/artcool/static/js/2.0bc2c21a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.94db9e12.js",
-    "static/js/2.92ff21c1.chunk.js",
+    "static/js/runtime-main.f2b7fc6d.js",
+    "static/js/2.0bc2c21a.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.f084694d.chunk.js"
+    "static/js/main.ff2d03ef.chunk.js"
   ]
 }
