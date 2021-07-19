@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/artcool/static/css/main.a617e044.chunk.css",
-    "main.js": "/artcool/static/js/main.eff6f266.chunk.js",
-    "main.js.map": "/artcool/static/js/main.eff6f266.chunk.js.map",
+    "main.js": "/artcool/static/js/main.99ebbc3e.chunk.js",
+    "main.js.map": "/artcool/static/js/main.99ebbc3e.chunk.js.map",
     "runtime-main.js": "/artcool/static/js/runtime-main.3a94fd89.js",
     "runtime-main.js.map": "/artcool/static/js/runtime-main.3a94fd89.js.map",
     "static/css/2.fd0c640a.chunk.css": "/artcool/static/css/2.fd0c640a.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.fd0c640a.chunk.css",
     "static/js/2.8f347e55.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.eff6f266.chunk.js"
+    "static/js/main.99ebbc3e.chunk.js"
   ]
 }
