@@ -16,6 +16,12 @@ object-assign
    */
 
 /*!
+  Copyright (c) 2018 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+
+/*!
  * ScrollMagic v2.0.8 (2020-08-14)
  * The javascript library for magical scroll interactions.
  * (c) 2020 Jan Paepke (@janpaepke)
